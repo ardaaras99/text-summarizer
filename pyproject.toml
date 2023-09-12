@@ -4,11 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Arda Can Aras <ardaaras99@gmail.com>"]
 readme = "README.md"
-packages = [{include = "text_summarizer"}]
+packages = [{ include = "text-summarizer" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-transformers = {extras = ["sentencepiece"], version = "^4.31.0"}
+transformers = { extras = ["sentencepiece"], version = "^4.31.0" }
 datasets = "^2.14.2"
 sacrebleu = "^2.3.1"
 rouge-score = "^0.1.2"

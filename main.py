@@ -1,3 +1,15 @@
-from src.textSummarizer.logging import logger
+from textSummarizer.pipeline.stage_01_data_ingestion import (
+    DataIngestionTrainingPipeline,
+)
+from textSummarizer.logging import logger
 
-logger.info("Welcome to our custom logging")
+
+STAGE_NAME = "Data Ingestion Stage"
+try:
+    logger.info(f"Running {STAGE_NAME}...")
+    data_ingestion = DataIngestionTrainingPipeline()
+    data_ingestion.main()
+    logger.info(f"Completed {STAGE_NAME}.")
+except Exception as e:
+    logger.error(f"Failed to run {STAGE_NAME}. Error: {e}")
+    raise e
